@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rsuservices/components/primary_button.dart';
 import 'package:rsuservices/constants.dart';
+import 'package:rsuservices/screens/main_drawer.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,27 +12,32 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text('RSU Services'),
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () => {},
-          ),
           actions: [
             IconButton(
               icon: Icon(Icons.more_vert),
               onPressed: () => {},
             ),
           ],
-          backgroundColor: Colors.pink,
+          backgroundColor: Colors.pink[300],
         ),
+        drawer: MainDrawer(),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
               children: [
-                Spacer(flex: 2),
+                Spacer(),
                 Image.asset(
                   "images/logo.png",
-                  height: 146,
+                  height: 200,
+                ),
+                Text(
+                  'มหาวิทยาลัยรังสิต',
+                  style: TextStyle(fontSize: 20),
+                ),
+                Text(
+                  'ระบบลงทะเบียนนักศึกษา',
+                  style: TextStyle(fontSize: 16),
                 ),
                 Spacer(),
                 new TextFormField(
